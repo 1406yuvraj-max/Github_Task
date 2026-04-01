@@ -1,19 +1,18 @@
-alert("JS Loaded");
-
 function fetchData() {
-    fetch("https://jsonplasceholder.typicode.com/posts")
+    alert("Working");
+
+    fetch("https://jsonplaceholder.typicode.com/posts")
     .then(res => res.json())
     .then(data => {
-        let list = document.getElementById("dataList");
+        const list = document.getElementById("dataList"); // ✅ fixed
+
         list.innerHTML = "";
 
-        data.slice(0,5).forEach(item =>{
-            let li = document.createElement("li"):
-            li.innerText = item.title;
-            list.appendChild(li);    
-        })
+        data.slice(0, 5).forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item.title;
+            list.appendChild(li);
+        });
     })
-    .catch(error =>{
-        console.log(error);
-    });
+    .catch(err => console.log(err));
 }
