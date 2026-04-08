@@ -1,6 +1,6 @@
 let posts = [];
 
-// Fetch data once
+
 async function fetchData() {
     try {
         const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -13,7 +13,7 @@ async function fetchData() {
     }
 }
 
-// Display function
+
 function displayData(data) {
     const list = document.getElementById("postList");
     list.innerHTML = "";
@@ -25,7 +25,7 @@ function displayData(data) {
     });
 }
 
-// Search function
+
 function searchData() {
     const value = document.getElementById("searchInput").value.toLowerCase();
 
@@ -36,5 +36,5 @@ function searchData() {
     displayData(filtered);
 }
 
-// Call fetch on page load
+
 fetchData();
